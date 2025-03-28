@@ -129,15 +129,14 @@
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1000px) {
+    .landing_background{
+        height: 75vh; /* Adjusted for smaller screens */
+    }
     .blob {
-        width: 150vmax;
-        height: 150vmax;
-        filter: blur(70px);
+        filter: blur(20px);
     }
-    .blob::before {
-        filter: blur(5vw);
-    }
+
     .main-text {
         font-size: 1.5rem; 
     }
