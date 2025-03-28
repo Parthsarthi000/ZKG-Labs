@@ -21,18 +21,18 @@
     overflow: hidden;
     white-space: nowrap;
     position: relative;
-    width: 75%;
+    width: 85%;
     padding: 15px; /* Added padding for a polished look */
     margin-top: 20px;
     background: rgba(255, 255, 255, 0.1); /* Subtle semi-transparent background */
     border: 2px solid rgba(107, 107, 195, 0.5); /* Gradient-inspired border for a modern effect */
     box-shadow: 0 8px 30px rgba(107, 107, 195, 0.5); /* Softer, refined shadow */
-    border-radius: 15px; /* Rounded edges for a smooth appearance */
+    border-radius: 60px; /* Rounded edges for a smooth appearance */
     transition: all 0.3s ease; /* Transition for interactive effects */
 }
 
 .marquee-wrapper:hover {
-    box-shadow: 0 10px 40px rgba(107, 107, 195, 0.7); /* Enhanced shadow on hover */
+    box-shadow: 0 8px 30px rgba(107, 107, 195, 0.7); /* Enhanced shadow on hover */
     transform: scale(1.03); /* Slight scaling effect for interactivity */
 }
 

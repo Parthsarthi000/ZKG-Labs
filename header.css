@@ -27,8 +27,12 @@
     text-transform: uppercase;
 }
 
+.nav-menu{
+    display: flex;
+}
+
 /* Adjusted nav styles */
-nav ul {
+.nav-menu ul {
     display: flex;
     gap: 30px; /* Slightly larger gap for a spacious layout */
     list-style: none;
@@ -36,7 +40,7 @@ nav ul {
     padding: 0;
 }
 
-nav a {
+.nav-menu a {
     font-family: 'Roboto', sans-serif;
     font-size: 18px; /* Larger font size for navigation links */
     color: white;
@@ -45,6 +49,42 @@ nav a {
     transition: opacity 0.3s ease;
 }
 
-nav a:hover {
+.nav-menu a:hover {
     opacity: 1; /* Keeps the hover effect crisp */
 }
+
+@media (max-width: 1000px) {
+    #header {
+        flex-direction: column; 
+        padding: 10px; 
+        width: 50%; 
+        top: 2%;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 20px; 
+    }
+
+    .logo {
+        font-size: 16px; /
+    }
+
+    nav ul {
+        flex-direction: column; 
+        gap: 20px; 
+    }
+
+    nav a {
+        font-size: 16px; 
+        opacity: 1; 
+    }
+    .nav-menu {
+        display: none; /* Hide navigation options by default */
+        flex-direction: column;
+    }
+
+    .nav-menu.active {
+        display: flex; /* Show navigation options when active */
+    }
+}
+
+

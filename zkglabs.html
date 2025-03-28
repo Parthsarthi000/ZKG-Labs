@@ -37,9 +37,9 @@ main{
     <main>
         <header id="header">
            
-                <span class="logo">ZKG LABS</span>
+            <span class="logo">ZKG LABS</span>
          
-              <nav>
+              <nav class="nav-menu">
                 <ul>
                   <li><a href="#">Home</a></li>
                   <!-- <li><a href="#">Partners and Awards</a></li> -->
@@ -204,4 +204,10 @@ main{
        
     </main> 
 </body>
+<script>// JavaScript for toggling menu on logo click
+    document.querySelector('.logo').addEventListener('click', () => {
+        const navMenu = document.querySelector('.nav-menu');
+        navMenu.classList.toggle('active'); // Toggle the 'active' class
+    });
+    </script>
 </html>
