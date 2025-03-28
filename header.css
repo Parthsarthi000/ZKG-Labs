@@ -1,0 +1,50 @@
+#header {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    padding: 20px 20px; /* Increased padding for more spacious design */
+    background: linear-gradient(to right, rgba(106, 27, 154, 0.9), rgba(0, 77, 132, 0.9));
+    backdrop-filter: blur(10px); 
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    position: absolute;
+    top: 2%;
+    left: 50%;
+    width: 50%; /* Increased width for better visual impact */
+    transform: translateX(-50%); /* Center the header */
+    z-index: 10;
+    border-radius: 50px; /* Keeps the rounded edges */
+    box-sizing: border-box;
+}
+
+/* Adjusted logo styles */
+.logo {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px; /* Slightly larger font for better visibility */
+    font-weight: 700;
+    color: white;
+    text-transform: uppercase;
+}
+
+/* Adjusted nav styles */
+nav ul {
+    display: flex;
+    gap: 30px; /* Slightly larger gap for a spacious layout */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px; /* Larger font size for navigation links */
+    color: white;
+    text-decoration: none;
+    opacity: 0.9; /* Slightly higher opacity for better readability */
+    transition: opacity 0.3s ease;
+}
+
+nav a:hover {
+    opacity: 1; /* Keeps the hover effect crisp */
+}
