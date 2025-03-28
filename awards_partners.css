@@ -1,69 +1,54 @@
-/* Partners Section */
+/* Styling the section */
 #awards-partners {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 50vh; /* Adjust as needed */
-    background: linear-gradient(120deg, #7998d3, #48255a);
+    padding: 40px;
+    text-align: center;
+    background-color: white;
 }
 
-#are_you_ready {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 50%;
+/* Section heading */
+#heading {
+    font-size: 2em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
 }
 
-#companies_logo.marquee-wrapper {
-    padding: 20px 0; /* Reduced padding for a more compact look */
+/* Partner logos container */
+.marquee-wrapper {
     overflow: hidden;
+    white-space: nowrap;
+    position: relative;
     width: 100%;
-    height: 50%;
+    margin-top: 20px;
 }
 
+/* Partners list for logos */
 .partners-list {
     display: flex;
-    gap: 40px;
-    animation: marquee 15s linear infinite; /* Faster animation for smaller logos */
-    white-space: nowrap;
-}
-
-.partners-list:hover {
-    animation-play-state: paused; /* Pauses animation on hover */
-}
-
-.partner-logo {
-    padding: 5px 10px;
-    display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    gap: 50px;
+    animation: scroll 15s linear infinite;
 }
 
-.partner-logo img {
-    width: 10px;
-    height: 10px;
+/* Logo styling */
+.logo img {
+    width: 200px;
+    height: auto;
+    background-size: cover; /* Cover to fill the area */
+    background-position: center;
+    background-repeat: no-repeat;
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
 }
 
-.partner-logo:hover {
-    transform: rotate(0deg); /* No rotation, but kept for consistency */
-    background: var(--primary-color);
-    color: #ffffff;
-    box-shadow: 0 5px 15px rgba(64, 224, 208, 0.3);
+/* Marquee animation for scrolling */
+@keyframes scroll {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
 }
 
-
-@keyframes marquee {
-    0% { transform: translateX(0%); }
-    100% { transform: translateX(-50%); }
-}
-
-/* Define CSS variables if not already present */
-:root {
-    --glass-bg: rgba(255, 255, 255, 0.1); /* Example glass effect */
-    --text-color: #333; /* Default text color */
-    --primary-color: #4CAF50; /* Highlight color */
-}
 
