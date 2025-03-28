@@ -1,0 +1,120 @@
+/* Define CSS variables for consistency */
+:root {
+    --primary-color: #4CAF50; /* Green accent */
+    --text-color: #333333; /* Dark text */
+    --card-bg: #FFFFFF; /* White card background */
+    --gradient-start: #3A1D49; /* Purple */
+    --gradient-end: #00477A; /* Blue */
+}
+
+/* Team Section */
+#team {
+    background-color: #FFFFFF; /* Light gray background */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    padding: 5%;
+}
+
+
+#team h2 {
+    font-size: 32px; /* Slightly larger for prominence */
+    font-weight: bold;
+    color: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+    margin-bottom: 40px; /* More space below the heading */
+    text-transform: uppercase; /* Align with your website’s style */
+}
+
+.team-grid {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    gap: 50px; /* Increased gap for better spacing */
+    padding-inline: 30px; /* Add padding to the sides */
+}
+
+.team-member {
+    width: 300px; /* Slightly larger for better proportions */
+    height: 300px; /* Adjusted height */
+    position: relative; /* Contain the card */
+}
+
+.team-member img {
+    width: 160px; /* Slightly larger image */
+    height: 160px;
+    border-radius: 50%;
+    border: 3px solid var(--gradient-start); /* Colored border */
+    margin-bottom: 20px; /* More space below the image */
+    transition: transform 0.3s ease;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+
+.team-member h3 {
+    font-size: 1.5em; /* Larger for better hierarchy */
+    margin: 10px 0;
+    color: var(--gradient-end);
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.team-member p {
+    font-size: 1em; /* Slightly larger for readability */
+    color: var(--text-color);
+    margin: 0;
+}
+
+/* @media(max-width:1300px)and(min-width:768px){
+.team-grid{
+    width: 100%;
+    flex-wrap: wrap;
+}
+} */
+
+/* Responsive adjustments */
+@media (max-width: 1300px) {
+    .team-grid {
+        flex-direction: column;
+        justify-content: space-evenly;
+        /* gap: 20px; */
+    }
+
+    .team-member {
+        width: 300px; /* Slightly larger on mobile */
+        height: 300px; /* Adjusted height for mobile */
+        margin: 0 auto;
+    }
+
+    .team-member img {
+        width: 170px; /* Slightly larger on mobile */
+        height: 170px;
+    }
+
+    .team-member h3 {
+        font-size: 1.4em;
+    }
+
+    .team-member p {
+        font-size: 0.95em;
+    }
+}
+
+/* For very small screens (e.g., <400px) */
+@media (max-width: 400px) {
+    .team-member {
+        width: 90%; /* Responsive width */
+        max-width: 300px;
+        height: 360px;
+    }
+
+    .team-member img {
+        width: 150px;
+        height: 150px;
+    }
+}
