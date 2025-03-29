@@ -9,12 +9,12 @@
     backdrop-filter: blur(10px); 
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     position: absolute;
-    top: 2%;
+    top: 0%;
     left: 50%;
-    width: 50%; /* Increased width for better visual impact */
+    width: 100%; /* Increased width for better visual impact */
+    height: 7%;
     transform: translateX(-50%); /* Center the header */
     z-index: 10;
-    border-radius: 50px; /* Keeps the rounded edges */
     box-sizing: border-box;
 }
 
@@ -57,11 +57,7 @@
     #header {
         flex-direction: column; 
         padding: 10px; 
-        width: 50%; 
-        top: 2%;
-        left: 50%;
         transform: translateX(-50%);
-        border-radius: 20px; 
     }
 
     .logo {
