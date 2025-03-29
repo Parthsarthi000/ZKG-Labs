@@ -132,11 +132,13 @@
     .team-grid {
         flex-direction: column;
         justify-content: center;
+        flex-wrap: nowrap;
         gap: 30px;
     }
 
     .container {
         width: 300px;
+        flex: none;
         height: 300px;
         margin: 0 auto; /* Center the cards */
     }
