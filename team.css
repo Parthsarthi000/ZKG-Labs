@@ -9,7 +9,7 @@
 
 /* Team Section */
 #team {
-    background-color: #FFFFFF; /* Light gray background */
+    background-color: #FFFFFF;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -17,15 +17,18 @@
     text-align: center;
     position: relative;
     padding: 5%;
+    height: auto;
 }
 
-
 #team h2 {
-    font-size: 32px; /* Slightly larger for prominence */
+    font-size: 32px;
     font-weight: bold;
-    color: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
-    margin-bottom: 40px; /* More space below the heading */
-    text-transform: uppercase; /* Align with your website’s style */
+    background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 40px;
+    text-transform: uppercase;
 }
 
 .team-grid {
@@ -33,72 +36,72 @@
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    gap: 50px; /* Increased gap for better spacing */
-    padding-inline: 30px; /* Add padding to the sides */
+    gap: 50px;
+    padding-inline: 30px;
+    /* Remove height: 100% as it’s not needed */
 }
 
-.container{
-    width: 300px; /* Slightly larger for better proportions */
-    height: 300px; /* Adjusted height */
-    position: relative; /* Contain the card */
+.container {
+    width: 300px;
+    height: 300px;
+    position: relative;
+    perspective: 1000px; /* For 3D flip effect */
 }
 
 .team-member {
-  position: absolute;
-  width: 100%;
- height: 100%;
-transform-style: preserve-3d;
-transition: all 0.5s ease;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease;
 }
 
 .team-member:hover {
-    transform: rotateY(180deg); /* Flip effect on hover */
+    transform: rotateY(180deg);
 }
 
-.front{
-    position: absolute;
-    width: 100%;
-   height: 100%;
-    backface-visibility: hidden;
-    background-color: var(--card-bg);
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.back{
+.front {
     position: absolute;
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
     background-color: var(--card-bg);
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* padding: 5%; */
+}
+
+.back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     transform: rotateY(180deg);
 }
 
 .team-member img {
-    width: 160px; /* Slightly larger image */
+    width: 160px;
     height: 160px;
     border-radius: 50%;
-    border: 3px solid var(--gradient-start); /* Colored border */
-    margin-bottom: 20px; /* More space below the image */
+    border: 3px solid var(--gradient-start);
+    margin-bottom: 20px;
     transition: transform 0.3s ease;
     object-fit: cover;
     object-position: center;
 }
 
-
-
 .team-member h3 {
-    font-size: 1.5em; /* Larger for better hierarchy */
+    font-size: 1.5em;
     margin: 10px 0;
     color: var(--gradient-end);
     font-weight: bold;
@@ -106,34 +109,45 @@ transition: all 0.5s ease;
 }
 
 .team-member p {
-    font-size: 1em; /* Slightly larger for readability */
+    font-size: 1em;
     color: var(--text-color);
     margin: 0;
 }
 
-/* @media(max-width:1300px)and(min-width:768px){
-.team-grid{
-    width: 100%;
-    flex-wrap: wrap;
-}
-} */
+/* Media Query for 1300px to 768px */
+@media (max-width: 1300px) and (min-width: 768px) {
+    .team-grid {
+        flex-wrap: wrap;
+        justify-content: center; /* Center the cards when they wrap */
+    }
 
-/* Responsive adjustments */
-@media (max-width: 1300px) {
+    .container {
+        flex: 0 0 calc(50% - 25px); /* Two cards per row, accounting for gap */
+        max-width: 300px; /* Ensure cards don’t grow too large */
+    }
+}
+
+/* Media Query for <768px */
+@media (max-width: 768px) {
     .team-grid {
         flex-direction: column;
-        justify-content: space-evenly;
-        /* gap: 20px; */
+        justify-content: center;
+        gap: 30px;
+    }
+
+    .container {
+        width: 300px;
+        height: 300px;
+        margin: 0 auto; /* Center the cards */
     }
 
     .team-member {
-        width: 300px; /* Slightly larger on mobile */
-        height: 300px; /* Adjusted height for mobile */
-        margin: 0 auto;
+        width: 100%;
+        height: 100%;
     }
 
     .team-member img {
-        width: 170px; /* Slightly larger on mobile */
+        width: 170px;
         height: 170px;
     }
 
@@ -146,12 +160,16 @@ transition: all 0.5s ease;
     }
 }
 
-/* For very small screens (e.g., <400px) */
+/* For very small screens (<400px) */
 @media (max-width: 400px) {
+    .container {
+        width: 300px;
+        height: 300px;
+    }
+
     .team-member {
-        width: 90%; /* Responsive width */
-        max-width: 300px;
-        height: 360px;
+        width: 100%;
+        height: 100%;
     }
 
     .team-member img {
