@@ -1,6 +1,6 @@
 /* Styling the section */
 #awards-partners {
-    padding: 40px;
+    /* padding: 40px; */
     text-align: center;
     background-color: white;
     display: flex;
@@ -8,6 +8,25 @@
     align-items: center;
     justify-content: center;
 }
+#are_you_ready{
+    background: linear-gradient(to bottom right, #312e81, #5b2b79, #1e3a8a); /* Gradient from indigo to purple to blue */
+    position: relative;
+    width: 100%;
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#are_you_ready #heading{
+    font-size: 3rem; /* Equivalent to Tailwind's text-3xl (30px) */
+    font-weight: 700; /* Equivalent to font-bold */
+    /* letter-spacing: -0.025em;  */
+    color: white; /* Matches text-white */
+    text-align: center;
+    width: 50%;
+}
+
 
 /* Section heading */
 #heading {
@@ -16,53 +35,37 @@
     color: #333;
     margin-bottom: 20px;
 }
-
-.marquee-wrapper {
+.logos{
     overflow: hidden;
     white-space: nowrap;
-    position: relative;
-    width: 85%;
-    padding: 15px; /* Added padding for a polished look */
-    margin-top: 20px;
-    background: rgba(255, 255, 255, 0.1); /* Subtle semi-transparent background */
-    border: 2px solid rgba(107, 107, 195, 0.5); /* Gradient-inspired border for a modern effect */
-    box-shadow: 0 8px 30px rgba(107, 107, 195, 0.5); /* Softer, refined shadow */
-    border-radius: 60px; /* Rounded edges for a smooth appearance */
-    transition: all 0.3s ease; /* Transition for interactive effects */
+    width: 80%;
 }
 
-.marquee-wrapper:hover {
-    box-shadow: 0 8px 30px rgba(107, 107, 195, 0.7); /* Enhanced shadow on hover */
-    transform: scale(1.03); /* Slight scaling effect for interactivity */
+.logos :hover .logos-slide{
+    animation-play-state: paused;
 }
 
-/* Partners list for logos */
-.partners-list {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 50px;
-    animation: scroll 20s linear infinite;
+@keyframes slide {
+   from {
+       transform: translateX(0);
+   }
+   to {
+       transform: translateX(-100%);
+   } 
 }
 
-/* Logo styling */
-.logo img {
-    width: 200px;
-    height: auto;
-    background-size: cover; /* Cover to fill the area */
-    background-position: center;
-    background-repeat: no-repeat;
-    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+.logos-slide{
+    display: inline-block;
+    animation: 20s slide linear infinite;
 }
 
-/* Marquee animation for scrolling */
-@keyframes scroll {
-    from {
-        transform: translateX(100%);
-    }
-    to {
-        transform: translateX(-100%);
-    }
+.logos-slide img{
+    height: 50px;
+    margin: 0 40px;
 }
+
+
+
+
 
 
