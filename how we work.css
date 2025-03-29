@@ -1,3 +1,7 @@
+
+
+
+
 /* Section styling (unchanged for context) */
 #how_we_work {
     position: relative;
@@ -13,34 +17,20 @@
     overflow: hidden;
 }
 
-/* SVG container - fixing z-index */
-#svgcontainer {
-    position: absolute;
-    width: 100%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    aspect-ratio: 1512/80;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    background-image: url('bg_about-line.svg');
-    z-index: 0; /* Changed from -0 to 0 for proper layering */
-}
-
-
 /* Timeline container */
 .timeline {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-    width: 100%;
-    z-index: 1;
+    /* flex-wrap: wrap; */
+    width: 90%;
 }
 
 /* Beautified timeline card */
 .timeline-card {
+    z-index: 2;
+
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -64,9 +54,13 @@
 .timeline-card .logo {
     width: 50px;
     height: 50px;
-    background-color: #e0e0e0; /* Placeholder color */
+    background-color: rgb(224, 219, 248); /* Placeholder color */
     border-radius: 50%; /* Circular shape */
     margin-bottom: 15px; /* Space below logo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #1225b5;
 }
 
 /* Heading styling */
@@ -88,6 +82,9 @@
     text-align: center;
 }
 
+
+
+/* Media Query for smaller screens (≤1300px) */
 @media (max-width: 1300px) {
     #how_we_work {
         height: auto; /* Allow the section to grow with content */
@@ -96,46 +93,73 @@
 
     .timeline {
         flex-direction: column; /* Stack cards vertically */
-        gap: 50px; /* Space between cards */
-    }
-
-    .timeline-card {
-        width: 80%;
-        max-width: 300px;
-    }
-
-    
+        gap: 20px; /* Space between cards */
+        position: relative; /* Ensure the timeline container is the positioning context for #svgcontainer */
+    }   
 }
 
-/* Optional: Styling for the section title */
- #title_for_section{
+
+
+#title_for_section {
     font-family: 'Poppins', sans-serif;
     font-size: 2rem;
     font-weight: bold;
     color: #1225b5;
     margin-bottom: 20px;
 }
-/* #timeline_hr{
-    position: absolute;
-    width: 90%;
-    border: none;
-    height: 0.5vh;
-    z-index: -1;
-    bottom: 35%;
-    background: linear-gradient(90deg, #3A1D49, #7D1D3F); /* Gradient from left to right 
-    box-shadow: 0px 0px 10px 2px #7D1D3F, 0px 0px 20px 4px #3A1D49; 
-    opacity: 0.9;  
-} */
-/* @media (max-width: 768px) {
-    #timeline_hr {
-    position: absolute;
-    width: 1%;
-    border: none;
-    height: 80%;
-    z-index: -1;
-    bottom: 10%;
-    background: linear-gradient(90deg, #3A1D49, #7D1D3F); /* Gradient from left to right 
-    box-shadow: 0px 0px 10px 2px #7D1D3F, 0px 0px 20px 4px #3A1D49; 
-    opacity: 0.9;  
+
+#paragraph_for_section {
+    margin-bottom: 5%;
+    color: rgb(103, 103, 103);
+    font-size: 1.2rem;
+    padding-left: 5%;
+    padding-right: 5%;
+    text-align: center;
+}
+
+/* Media Queries for different screen sizes */
+
+/* Small screens (mobile devices, up to 576px) */
+@media (max-width: 576px) {
+    #title_for_section {
+        font-size: 1.5rem; /* Reduce heading size for smaller screens */
     }
-} */
+
+    #paragraph_for_section {
+        font-size: 1rem; /* Reduce paragraph size for readability */
+        
+    }
+}
+
+/* Medium screens (tablets, 577px to 768px) */
+@media (min-width: 577px) and (max-width: 768px) {
+    #title_for_section {
+        font-size: 1.8rem; /* Slightly smaller than base but larger than mobile */
+    }
+
+    #paragraph_for_section {
+        font-size: 1.1rem; /* Slightly smaller than base */
+    }
+}
+
+/* Large screens (desktops, 769px to 992px) */
+@media (min-width: 769px) and (max-width: 992px) {
+    #title_for_section {
+        font-size: 1.9rem; /* Slightly smaller than base */
+    }
+
+    #paragraph_for_section {
+        font-size: 1.15rem; /* Slightly smaller than base */
+    }
+}
+
+/* Extra large screens (large desktops, 993px and above) */
+@media (min-width: 993px) {
+    #title_for_section {
+        font-size: 2rem; /* Keep the base size */
+    }
+
+    #paragraph_for_section {
+        font-size: 1.2rem; /* Keep the base size */
+    }
+}
