@@ -4,26 +4,30 @@
     flex-direction: row;
     align-items: center;
     gap: 10px;
-    padding: 20px 20px; /* Increased padding for more spacious design */
-    background: linear-gradient(to right, rgba(106, 27, 154, 0.9), rgba(0, 77, 132, 0.9));
-    backdrop-filter: blur(10px); 
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 20px 20px; /* For a spacious design */
+    background: rgba(255, 255, 255, 0.5); 
+    /* background: linear-gradient(to right, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1)); */
+
+    backdrop-filter: blur(12px); /* Blur effect for glassy look */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border for separation */
     position: absolute;
     top: 0%;
     left: 50%;
-    width: 100%; /* Increased width for better visual impact */
-    height: 7%;
-    transform: translateX(-50%); /* Center the header */
+    width: 100%;
+    height: auto;
+    transform: translateX(-50%);
     z-index: 10;
     box-sizing: border-box;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Slight shadow for depth */
 }
+
 
 /* Adjusted logo styles */
 .logo {
     font-family: 'Roboto', sans-serif;
     font-size: 20px; /* Slightly larger font for better visibility */
     font-weight: 700;
-    color: white;
+    color: rgb(0, 0, 0);
     text-transform: uppercase;
 }
 
@@ -39,11 +43,16 @@
     margin: 0;
     padding: 0;
 }
+.nav-menu ul li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 .nav-menu a {
     font-family: 'Roboto', sans-serif;
     font-size: 18px; /* Larger font size for navigation links */
-    color: white;
+    color: rgb(0, 0, 0);
     text-decoration: none;
     opacity: 0.9; /* Slightly higher opacity for better readability */
     transition: opacity 0.3s ease;
