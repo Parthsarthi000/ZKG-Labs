@@ -56,9 +56,18 @@
     transition: transform 0.5s ease;
 }
 
-.team-member:hover {
-    transform: rotateY(180deg);
+@supports (hover: hover) {
+    .team-member:hover {
+        transform: rotateY(180deg);
+    }
 }
+
+@supports (hover: none) {
+    .team-member:active {
+        transform: rotateY(180deg);
+    }
+}
+
 
 .front {
     position: absolute;
