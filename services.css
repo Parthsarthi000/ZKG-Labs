@@ -1,61 +1,71 @@
 
+/* Base Styles */
 .work {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     width: 100vw;
-    
     background-color: #f7fafc;
-        position: relative;
-    padding:10% 0 ;
+    position: relative;
+    padding: 5% 0; /* Reduced padding for better responsiveness */
     overflow: hidden; 
 }
 
+/* Typography Enhancements */
 .work-heading {
-    font-size: 2.5em; /* Large heading */
+    font-size: clamp(1.8em, 2.5vw, 3em); /* Responsive font size */
     font-weight: bold;
     color: #000000;
     text-align: center;
     margin-bottom: 40px;
     text-transform: uppercase;
+    letter-spacing: 0.05em; /* Slight spacing for clarity */
 }
 
 .works {
     display: flex;
     flex-direction: column;
-    gap: 5vh; /* Space between cards */
+    gap: 5vh; 
     justify-content: space-evenly;
     align-items: center;
-    width: 80%;
-    padding: 0 20px;
+    width: 90%; /* Slightly reduced width for better visual flow */
+    padding: 0 5%;
 }
 
+/* Card Styles */
 .card {
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: space-evenly;
     align-items: center;
-    width: 100%; 
-    gap: 5%; /* Space between image and text */
-    /* background-color: #ffffff; */
-    
-    height: 350px; /* Fixed height for consistency */
-   
+    width: 90%; 
+    gap: 3%; /* Adjusted for better spacing on smaller screens */
+    height: 350px;
     position: relative;
     overflow: hidden;
+    padding: 0% 10%;
 }
-.card .texts{
-    flex:1;
+
+.card .texts {
+    flex: 1;
     text-align: left;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    gap: 50px;
+    gap: 20px;
+    font-size: clamp(0.9em, 1.2vw, 1.2em); /* Responsive text sizing */
+    line-height: 1.5; /* Improved readability */
+    color: #333333; /* Softer text color for better contrast */
 }
-.card .image-container{
-    flex:1;
+.card .texts .heading{
+    font-size: clamp(1.8em, 2.5vw, 3em);
+    font-weight: 800;
+}
+
+.card .image-container {
+    flex: 1;
     background-color: #e2e8f0;
     height: 100%;
     display: flex;
@@ -63,6 +73,49 @@
     justify-content: center;
     align-items: center;
 }
+
+/* Tablet Screen Adjustments */
+@media (max-width: 1100px) and (min-width: 768px) {
+    
+    .card {
+        height: 250px;
+    }
+}
+
+/* Mobile Screen Adjustments */
+@media (max-width: 768px) {
+    .works{
+        gap: 2vh;
+    }
+    .card {
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 90%;
+        padding:0% 5%;
+        height: 450px; 
+    }
+
+    .card .texts {
+        flex: 1;
+        order: -1; /* Place texts above image-container */
+    }
+   
+    .card .image-container {
+        flex: 1;
+        width: 100%; /* Ensure it adapts to screen */
+        /* height: 100%;  */
+        background-color: #e2e8f0; /* Placeholder background */
+        display: flex;
+        border-radius: 5%;
+        justify-content: center;
+        align-items: center;
+        margin:0% 10%;
+    }
+    
+}
+
+  
 
 
 
