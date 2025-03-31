@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,8 +12,10 @@
     <link rel="stylesheet" href="CSS Files/team.css" />
     <link rel="stylesheet" href="CSS Files/awards_partners.css" />
     <link rel="stylesheet" href="CSS Files/footer.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <style>
     html,
@@ -24,7 +26,7 @@
       height: 100%;
       overflow-x: hidden;
       box-sizing: border-box;
-      font-family: 'Inter', sans-serif;
+      font-family: "Inter", sans-serif;
       line-height: 1.6; /* Improves readability */
     }
     main {
@@ -39,13 +41,16 @@
   <body>
     <main>
       <header id="header">
-        <span class="logo">ZKG LABS</span>
+        <div class="company">
+          <div class="logo">ZKG LABS</div>
+          <div class="menu-icon">&#9776;</div>
+        </div>
 
         <nav class="nav-menu">
           <ul>
             <li><a href="#">How We Work</a></li>
             <!-- <li><a href="#">Partners and Awards</a></li> -->
-           
+
             <li><a href="#">Services</a></li>
             <li><a href="#">Team</a></li>
             <li><a href="#">About Us</a></li>
@@ -181,7 +186,6 @@
       <section id="team">
         <h2>Our Team</h2>
         <div class="team-grid">
-
           <div class="container">
             <div class="team-member">
               <div class="front">
@@ -258,53 +262,63 @@
 
       <section id="awards-partners">
         <div id="are_you_ready">
-            
-            <div id="heading">Are you ready to achieve your true potential with ZKG Labs?</div>
-          
+          <div id="heading">
+            Are you ready to achieve your true potential with ZKG Labs?
+          </div>
         </div>
-        <div  class="logos">
-         <div id="heading">Trusted Partners and Awards</div>
+        <div class="logos">
+          <div id="heading">Trusted Partners and Awards</div>
           <div class="logos-slide">
             <!-- First set of logos -->
-              <img src="companies jpgs/entrepreneurshipcenter.png" alt="Company Logo 1" />
-            
-              <img src="companies jpgs/HKSTP.png" alt="Company Logo 2" />
-            
-              <img src="companies jpgs/petalgard.png" alt="Company Logo 3" />
-            
-              <img src="companies jpgs/sinclair.png" alt="Company Logo 4" />
-           
-              <img src="companies jpgs/image.png" alt="Company Logo 5" />
-              <img src="companies jpgs/COFLUENCE_LOGO.png" alt="">
+            <img
+              src="companies jpgs/entrepreneurshipcenter.png"
+              alt="Company Logo 1"
+            />
+
+            <img src="companies jpgs/HKSTP.png" alt="Company Logo 2" />
+
+            <img src="companies jpgs/petalgard.png" alt="Company Logo 3" />
+
+            <img src="companies jpgs/sinclair.png" alt="Company Logo 4" />
+
+            <img src="companies jpgs/image.png" alt="Company Logo 5" />
+            <img src="companies jpgs/COFLUENCE_LOGO.png" alt="" />
           </div>
           <div class="logos-slide">
             <!-- Second set of logos -->
-              <img src="companies jpgs/entrepreneurshipcenter.png" alt="Company Logo 1" />
-            
-              <img src="companies jpgs/HKSTP.png" alt="Company Logo 2" />
-            
-              <img src="companies jpgs/petalgard.png" alt="Company Logo 3" />
-            
-              <img src="companies jpgs/sinclair.png" alt="Company Logo 4" />
-           
-              <img src="companies jpgs/image.png" alt="Company Logo 5" />
-              <img src="companies jpgs/COFLUENCE_LOGO.png" alt="">
+            <img
+              src="companies jpgs/entrepreneurshipcenter.png"
+              alt="Company Logo 1"
+            />
+
+            <img src="companies jpgs/HKSTP.png" alt="Company Logo 2" />
+
+            <img src="companies jpgs/petalgard.png" alt="Company Logo 3" />
+
+            <img src="companies jpgs/sinclair.png" alt="Company Logo 4" />
+
+            <img src="companies jpgs/image.png" alt="Company Logo 5" />
+            <img src="companies jpgs/COFLUENCE_LOGO.png" alt="" />
           </div>
         </div>
       </section>
 
-<section class="footer">
-  <div>ZKG Labs</div>
-  <div>© 2025 ZKG Labs. All rights reserved.</div>
-</section>
-
+      <section class="footer">
+        <div>ZKG Labs</div>
+        <div>© 2025 ZKG Labs. All rights reserved.</div>
+      </section>
     </main>
   </body>
   <script>
     // JavaScript for toggling menu on logo click
-    document.querySelector(".logo").addEventListener("click", () => {
+    document.querySelector(".menu-icon").addEventListener("click", () => {
       const navMenu = document.querySelector(".nav-menu");
-      navMenu.classList.toggle("active"); // Toggle the 'active' class
+      navMenu.classList.toggle("active"); // Simply toggle the active class
+    });
+    document.querySelectorAll(".team-member").forEach((member) => {
+      member.addEventListener("click", () => {
+        member.classList.toggle("flipped");
+      });
     });
   </script>
 </html>

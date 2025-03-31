@@ -1,95 +1,131 @@
+/* Default styles (unchanged for larger screens) */
 #header {
     display: flex;
     justify-content: space-between;
     flex-direction: row;
     align-items: center;
     gap: 10px;
-    padding: 20px 20px; /* For a spacious design */
-    background: rgba(255, 255, 255, 0.5); 
-    /* background: linear-gradient(to right, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1)); */
-
-    backdrop-filter: blur(12px); /* Blur effect for glassy look */
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border for separation */
+    padding: 20px 20px;
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     position: absolute;
-    top: 0%;
+    top: 0;
     left: 50%;
     width: 100%;
     height: auto;
     transform: translateX(-50%);
     z-index: 10;
     box-sizing: border-box;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Slight shadow for depth */
-}
-
-
-/* Adjusted logo styles */
-.logo {
-    font-family: 'Roboto', sans-serif;
-    font-size: 20px; /* Slightly larger font for better visibility */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .company {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .logo {
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
     font-weight: 700;
     color: rgb(0, 0, 0);
     text-transform: uppercase;
-}
-
-.nav-menu{
+  }
+  
+  .menu-icon {
+    display: none;
+    align-self: flex-end;
+  }
+  
+  .nav-menu {
     display: flex;
-}
-
-/* Adjusted nav styles */
-.nav-menu ul {
+  }
+  
+  .nav-menu ul {
     display: flex;
-    gap: 30px; /* Slightly larger gap for a spacious layout */
+    gap: 30px;
     list-style: none;
     margin: 0;
     padding: 0;
-}
-.nav-menu ul li {
+  }
+  
+  .nav-menu ul li {
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.nav-menu a {
-    font-family: 'Roboto', sans-serif;
-    font-size: 18px; /* Larger font size for navigation links */
+  }
+  
+  .nav-menu a {
+    font-family: "Roboto", sans-serif;
+    font-size: 18px;
     color: rgb(0, 0, 0);
     text-decoration: none;
-    opacity: 0.9; /* Slightly higher opacity for better readability */
+    opacity: 0.9;
     transition: opacity 0.3s ease;
-}
-
-.nav-menu a:hover {
-    opacity: 1; /* Keeps the hover effect crisp */
-}
-
-@media (max-width: 1000px) {
+  }
+  
+  .nav-menu a:hover {
+    opacity: 1;
+  }
+  
+  /* Mobile styles */
+  @media (max-width: 1000px) {
     #header {
-        flex-direction: column; 
-        padding: 10px; 
-        transform: translateX(-50%);
+      flex-direction: column;
+      /* Remove transition: height 0.3s ease; since we don’t need to animate header height directly */
     }
-
+  
+    /* Remove #header.expanded as it’s not needed */
+    .company {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+  
     .logo {
-        font-size: 16px; /
+      flex-grow: 1;
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: bold;
     }
-
-    nav ul {
-        flex-direction: column; 
-        gap: 20px; 
+  
+    .menu-icon {
+      font-size: 1.5rem;
+      cursor: pointer;
+      display: block;
     }
-
-    nav a {
-        font-size: 16px; 
-        opacity: 1; 
-    }
+  
     .nav-menu {
-        display: none; /* Hide navigation options by default */
-        flex-direction: column;
+      display: flex; /* Always flex, no toggling with display */
+      flex-direction: column;
+      max-height: 0; /* Collapsed state */
+      overflow: hidden; /* Hide content when collapsed */
+      opacity: 0; /* Invisible when collapsed */
+      transform: translateY(-10px); /* Slight upward shift when hidden */
+      transition: max-height 0.3s ease, opacity 0.3s ease, transform 0.3s ease; /* Animate these properties */
+      width: 100%; /* Ensure it spans the full width */
     }
-
+  
     .nav-menu.active {
-        display: flex; /* Show navigation options when active */
+      max-height: 500px; /* Expanded state, adjust if content is taller */
+      opacity: 1; /* Fully visible */
+      transform: translateY(0); /* Back to original position */
     }
-}
-
-
+  
+    .nav-menu ul {
+      flex-direction: column;
+      gap: 20px;
+      width: 100%;
+      padding: 10px 0; /* Optional: add padding for better spacing */
+    }
+  
+    .nav-menu a {
+      font-size: 16px;
+      opacity: 1;
+    }
+  }
