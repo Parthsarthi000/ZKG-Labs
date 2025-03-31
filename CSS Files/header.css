@@ -28,7 +28,7 @@
   }
   
   .logo {
-    font-family: "Roboto", sans-serif;
+ 
     font-size: 20px;
     font-weight: 700;
     color: rgb(0, 0, 0);
@@ -59,7 +59,7 @@
   }
   
   .nav-menu a {
-    font-family: "Roboto", sans-serif;
+ 
     font-size: 18px;
     color: rgb(0, 0, 0);
     text-decoration: none;
@@ -75,6 +75,9 @@
   @media (max-width: 1000px) {
     #header {
       flex-direction: column;
+      height: fit-content;
+      padding: 10px;
+      /* border-bottom: 100px; */
       /* Remove transition: height 0.3s ease; since we don’t need to animate header height directly */
     }
   
@@ -85,6 +88,7 @@
       justify-content: space-between;
       align-items: center;
       width: 100%;
+
     }
   
     .logo {
@@ -95,9 +99,12 @@
     }
   
     .menu-icon {
-      font-size: 1.5rem;
+      font-size: 1rem;
       cursor: pointer;
-      display: block;
+   
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
   
     .nav-menu {

@@ -65,7 +65,7 @@
 
 /* Heading styling */
 .timeline-card .heading {
-    font-family: 'Poppins', sans-serif; /* Modern font */
+
     font-size: 1.2rem; /* Slightly larger for emphasis */
     font-weight: 600; /* Bold but balanced */
     color: #1225b5; /* Blue to match the theme */
@@ -75,7 +75,7 @@
 
 /* Paragraph styling */
 .timeline-card .description {
-    font-family: 'Open Sans', sans-serif; /* Clean font */
+
     font-size: 0.9rem; /* Smaller for hierarchy */
     color: #333; /* Dark gray for readability */
     line-height: 1.5; /* Comfortable spacing */
@@ -102,7 +102,7 @@
 
 
 #title_for_section {
-    font-family: 'Poppins', sans-serif;
+   
     font-size: 2rem;
     font-weight: bold;
     color: #1225b5;
