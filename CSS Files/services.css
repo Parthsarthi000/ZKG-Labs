@@ -147,7 +147,11 @@
     box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2); /* Enhance hover shadow */
 }
 
-  
+.stats{
+    font-size: 1.5rem;
+    color: #1225b5;
+    font-weight: bold;
+}
 
 
 
