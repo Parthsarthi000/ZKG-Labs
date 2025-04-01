@@ -36,8 +36,8 @@
     justify-content: space-around;
     /* gap: 5%; */
     align-items: center;
-    width: 250px; /* Increased width for better readability */
-    height: 250px; 
+    /* width: 300px; 
+    height: 300px;  */
 
     padding: 20px; 
     border-radius: 15px; /* Softer corners */
@@ -56,6 +56,8 @@
 .timeline-card .logo {
     width: 50px;
     height: 50px;
+    max-width: 50px;
+    max-height: 50px;
     background-color: rgb(224, 219, 248); /* Placeholder color */
     border-radius: 50%; /* Circular shape */
     aspect-ratio: 1/1;
@@ -68,7 +70,7 @@
 
 /* Heading styling */
 .timeline-card .heading {
-    font-size: 1.2rem; /* Slightly larger for emphasis */
+    /* font-size: 1.2rem;  */
     font-weight: 600; /* Bold but balanced */
     color: #1225b5; /* Blue to match the theme */
  
@@ -78,7 +80,7 @@
 /* Paragraph styling */
 .timeline-card .description {
 
-    font-size: 0.9rem; /* Smaller for hierarchy */
+    /* font-size: 0.9rem;  */
     color: #333; /* Dark gray for readability */
     /* line-height: 1;  */
     text-align: center;
@@ -124,6 +126,10 @@
 
 /* Small screens (mobile devices, up to 576px) */
 @media (max-width: 576px) {
+    .timeline-card{
+        width: 200px;
+        height: 200px;
+    }
     #title_for_section {
         font-size: 1.5rem; /* Reduce heading size for smaller screens */
     }
@@ -142,6 +148,10 @@
 
 /* Medium screens (tablets, 577px to 768px) */
 @media (min-width: 577px) and (max-width: 768px) {
+    .timeline-card{
+        width: 200px;
+        height: 200px;
+    }
     #title_for_section {
         font-size: 1.8rem; /* Slightly smaller than base but larger than mobile */
     }
@@ -160,6 +170,10 @@
 
 /* Large screens (desktops, 769px to 992px) */
 @media (min-width: 769px) and (max-width: 992px) {
+    .timeline-card{
+        width: 200px;
+        height: 200px;
+    }
     #title_for_section {
         font-size: 1.9rem; /* Slightly smaller than base */
     }
@@ -178,6 +192,11 @@
 
 /* Extra large screens (large desktops, 993px and above) */
 @media (min-width: 993px) {
+    .timeline-card{
+        width: 225px;
+        height: 225px;
+    }
+   
     #title_for_section {
         font-size: 2rem; /* Keep the base size */
     }
@@ -185,15 +204,12 @@
     #paragraph_for_section {
         font-size: 1.2rem; /* Keep the base size */
     }
-    .timeline-card{
-        width: 200px;
-        height: 200px;
-    }
+   
     .timeline-card .heading {
-        font-size: 1.3rem; /* Slightly larger for emphasis on larger screens */
+        font-size: 1.3rem; 
     }
 
     .timeline-card .description {
-        font-size: 1rem; /* Slightly larger for better readability */
+        font-size: 1rem; 
     }
 }
