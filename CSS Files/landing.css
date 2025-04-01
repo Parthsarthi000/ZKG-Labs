@@ -4,6 +4,7 @@
     height: 100vh;
     width: 100vw;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     position: relative;
@@ -17,10 +18,8 @@
     color: white;
     text-align: center;
     z-index: 2;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    position: relative;
+    
     width: 80%;
     max-width: 800px;
     height: auto;
@@ -28,17 +27,18 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    animation: fadeIn 1.5s ease-out;
+    animation: fadeIn 1s ease-out;
+    
 }
 
 @keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translate(-50%, -30px);
+        margin-top: 30px; /* Start slightly lower */
     }
     to {
         opacity: 1;
-        transform: translate(-50%, -50%);
+        margin-top: 0px; /* Final position */
     }
 }
 
@@ -122,46 +122,168 @@
     }
 }
 
-/* Updated media query with font size adjustments */
-@media (max-width: 1000px) {
+
+
+
+/* Container for the cards */
+/* Container for the cards */
+.landing_cards-container {
+    display: flex;
+    justify-content: space-evenly; /* Center the cards instead of space-between */
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    max-width: 800px; /* Slightly wider to match the image layout */
+    gap: 24px; /* gap-6 in Tailwind = 24px */
+    /* Remove the fixed height */
+    z-index: 2;
+    flex: 0 0 auto; /* Prevent stretching */
+  }
+  
+  /* Individual card styling */
+  .landing_card {
+    width: 150px;
+    height: 100px;
+    min-height: 100px; /* Prevent shrinking */
+    max-height: 150px; /* Prevent expansion */
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+    backdrop-filter: blur(4px);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    overflow: hidden; /* Hide overflow content */
+    justify-content: center; /* Center content vertically */
+  }
+  /* Check icon styling */
+  .check-icon {
+    display: block;
+    margin-bottom: 12px; /* Reduced from 16px to make the card more compact */
+    font-size: 32px; /* Slightly smaller icon to match the image */
+    color: #60a5fa; /* text-blue-400 */
+  }
+  
+  .landing_card p {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 700;
+    color: white;
+    line-height: 1; /* Minimize text height */
+    text-align: center;
+  }
+/* Medium Screens (768px - 999px) */
+@media (max-width: 999px) and (min-width: 768px) {
+    .main-text {
+      width: 85%;
+      max-width: 700px;
+    }
+    .main-text #true_potential {
+      font-size: clamp(1.5rem, 4.5vw, 3rem);
+    }
+    .main-text #description {
+      font-size: clamp(1rem, 2vw, 1.25rem);
+    }
+    .landing_cards-container {
+      max-width: 700px;
+      gap: 20px;
+      margin-top: 24px;
+    }
+    .landing_card {
+      width: 100px;
+      height: 75px;
+      max-height: 75px;
+      max-width: 100px;
+      padding: 8px;
+    }
+    .check-icon {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+    .landing_card p {
+      font-size: 0.9rem;
+    }
     .blob {
-        filter: blur(20px); /* Keep the blur adjustment */
+      filter: blur(20px);
     }
+  }
+  
+  /* Small Screens (≤ 767px) */
+  @media (max-width: 767px) and (min-width:481px){
     .main-text {
-        width: 85%;
-        max-width: 600px;
+      width: 90%;
+      max-width: 500px;
     }
     .main-text #true_potential {
-        font-size: clamp(1.5rem, 4vw, 2.5rem); /* Reduced for tablets */
+      font-size: clamp(1.25rem, 4vw, 2.5rem);
+      margin-bottom: 8%;
     }
     .main-text #description {
-        font-size: clamp(1rem, 2vw, 1.25rem); /* Reduced for tablets */
+      font-size: clamp(0.875rem, 1.8vw, 1.125rem);
     }
-}
-
-@media (max-width: 768px) {
+    .landing_cards-container {
+      /* flex-direction: column;
+      align-items: center;
+      justify-content: center; */
+      max-width: 500px;
+      margin-top: 20px;
+      gap: 10px;
+    }
+    .landing_card {
+      width: 50%;
+      max-width: 90px;
+      height: auto;
+      max-height: 75px;
+      padding: 8px;
+    }
+    .check-icon {
+      font-size: 24px;
+      margin-bottom: 8px;
+    }
+    .landing_card p {
+      font-size: 0.85rem;
+    }
+    .blob {
+      filter: blur(20px);
+    }
+  }
+  
+  /* Extra Small Screens (≤ 480px) */
+  @media (max-width: 480px) {
     .main-text {
-        width: 90%;
+      width: 95%;
+    }
+    .main-text #true_potential {
+      font-size: clamp(1rem, 3.5vw, 1.75rem);
+      margin-bottom: 10%;
+    }
+    .main-text #description {
+      font-size: clamp(0.75rem, 1.5vw, 1rem);
+    }
+    .landing_cards-container {
+        /* flex-direction: column;
+        align-items: center;
+        justify-content: center; */
         max-width: 500px;
+        margin-top: 10px;
+        gap: 10px;
+      }
+      .landing_card {
+        width: 50%;
+        max-width: 75px;
+        height: auto;
+        max-height: 50px;
+        padding: 8px;
+      }
+    .check-icon {
+      font-size: 20px;
+      /* margin-bottom: 6px; */
     }
-    .main-text #true_potential {
-        font-size: clamp(1.5rem, 3.5vw, 2rem); /* Further reduced for smaller tablets */
+    .landing_card p {
+      font-size: 0.8rem;
     }
-    .main-text #description {
-        font-size: clamp(1rem, 1.8vw, 1.125rem); /* Further reduced for smaller tablets */
+    .blob {
+      filter: blur(20px);
     }
-}
-
-@media (max-width: 480px) {
-    .main-text {
-        width: 95%;
-        /* max-width: 400px; */
-    }
-    .main-text #true_potential {
-        font-size: clamp(1.25rem, 3vw, 1.5rem); /* Smallest size for mobile */
-        margin-bottom: 10%;
-    }
-    .main-text #description {
-        font-size: clamp(0.875rem, 1.5vw, 1rem); /* Smallest size for mobile */
-    }
-}
+  }
