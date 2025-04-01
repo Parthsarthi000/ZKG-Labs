@@ -28,6 +28,7 @@
       box-sizing: border-box;
       font-family: "Inter", sans-serif;
       line-height: 1.6; /* Improves readability */
+      scroll-behavior: smooth;
     }
     main {
       display: flex;
@@ -43,25 +44,25 @@
     <main>
       <header id="header">
         <div class="company">
-          <div class="logo">ZKG LABS</div>
+          <div class="logo"><a style="text-decoration: none;color: black;" href="#landing_background">ZKG Labs</a></div>
           <div class="menu-icon">&#9776;</div>
         </div>
 
         <nav class="nav-menu">
           <ul>
-            <li><a href="#">How We Work</a></li>
+            <li><a href="#how_we_work">How We Work</a></li>
             <!-- <li><a href="#">Partners and Awards</a></li> -->
 
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Team</a></li>
-            <li><a href="#">About Us</a></li>
+            <li><a href="#work">Services</a></li>
+            <li><a href="#team">Team</a></li>
+            <li><a href="#awards-partners">Contact Us</a></li>
             <!-- <li><a href="#">Contact</a></li> -->
           </ul>
         </nav>
       </header>
 
-      <section class="landing_background">
-        <div class="background">
+      <section id="landing_background">
+        <div id="background">
           <div class="blob"></div>
         </div>
         <div class="main-text">
@@ -88,7 +89,9 @@
         </div>
         <div class="timeline">
           <div class="timeline-card">
-            <div class="logo">1</div>
+            <div class="logo">
+              <span>1</span>
+            </div>
             <div class="heading">Deep Process Immersion</div>
             <div class="description">
               On-site observations and employee interviews to map workflows and
@@ -96,7 +99,9 @@
             </div>
           </div>
           <div class="timeline-card">
-            <div class="logo">2</div>
+            <div class="logo">
+              <span>2</span>
+            </div>
             <div class="heading">Bottleneck Diagnosis</div>
             <div class="description">
               Analyzing data and operations to identify root causes of
@@ -104,7 +109,9 @@
             </div>
           </div>
           <div class="timeline-card">
-            <div class="logo">3</div>
+            <div class="logo">
+              <span>3</span>
+            </div>
             <div class="heading">Custom AI Solution Design</div>
             <div class="description">
               Building tailored AI tools targeting bottlenecks to streamline
@@ -112,7 +119,9 @@
             </div>
           </div>
           <div class="timeline-card">
-            <div class="logo">4</div>
+            <div class="logo">
+              <span>4</span>
+            </div>
             <div class="heading">Iterative Model Validation</div>
             <div class="description">
               Testing prototypes with stakeholders and refining them for
@@ -122,7 +131,7 @@
         </div>
       </section>
 
-      <section class="work">
+      <section id="work">
         <div class="work-heading">Our Work</div>
         <div class="works">
           <div id="pest_control" class="card">
@@ -137,7 +146,7 @@
                 Reduce costs by up to 60% while improving detection accuracy to
                 over 95%.
               </div>
-              <button></button>
+              <button style="display: none;"></button>
             </div>
             <div class="image-container">
               <div class="image"></div>
@@ -159,7 +168,7 @@
                 Increase ROI and engagement rates through data-driven influencer
                 selection and campaign optimization.
               </div>
-              <button></button>
+              <a id="infmark" href="https://cofluence.netlify.app/">Learn More <span class="arrow">→</span></a>
             </div>
           </div>
 
@@ -175,7 +184,7 @@
                 Connect sustainable projects with impact investors through
                 AI-powered matching and transparent ESG reporting.
               </div>
-              <button></button>
+              <button style="display: none;"></button>
             </div>
             <div class="image-container">
               <div class="image"></div>
@@ -305,9 +314,40 @@
       </section>
 
       <section class="footer">
-        <div>ZKG Labs</div>
-        <div>© 2025 ZKG Labs. All rights reserved.</div>
-      </section>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <div class="footer-logo">ZKG Labs</div>
+                <p class="footer-tagline">Transforming business with AI solutions.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#landing_background">Home</a></li>
+                    <li><a href="#how_we_work">About Us</a></li>
+                    <li><a href="#work">Services</a></li>
+                    <li><a href="#team">Team</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact Us</h4>
+                <p>Email: <a href="mailto:info@zkglabs.com">info@zkglabs.com</a></p>
+                <p>Phone: <a href="tel:+1234567890">+1 (234) 567-890</a></p>
+            </div>
+            <div class="footer-social">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 ZKG Labs. All rights reserved.</p>
+        </div>
+    </section>
+
+
     </main>
   </body>
   <script>

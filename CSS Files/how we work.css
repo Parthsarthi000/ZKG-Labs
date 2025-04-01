@@ -33,10 +33,12 @@
     z-index: 2;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-around;
+    /* gap: 5%; */
     align-items: center;
-    width: 200px; /* Increased width for better readability */
-    height: 200px; /* Adjusted height for better proportions */
+    width: 250px; /* Increased width for better readability */
+    height: 250px; 
+
     padding: 20px; 
     border-radius: 15px; /* Softer corners */
     background: linear-gradient(135deg, #ffffff, #f0f4ff); /* Subtle gradient for depth */
@@ -56,7 +58,8 @@
     height: 50px;
     background-color: rgb(224, 219, 248); /* Placeholder color */
     border-radius: 50%; /* Circular shape */
-    margin-bottom: 15px; /* Space below logo */
+    aspect-ratio: 1/1;
+    /* margin: 15px;  */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -65,11 +68,10 @@
 
 /* Heading styling */
 .timeline-card .heading {
-
     font-size: 1.2rem; /* Slightly larger for emphasis */
     font-weight: 600; /* Bold but balanced */
     color: #1225b5; /* Blue to match the theme */
-    margin-bottom: 10px; /* Space below heading */
+ 
     text-align: center;
 }
 
@@ -78,7 +80,7 @@
 
     font-size: 0.9rem; /* Smaller for hierarchy */
     color: #333; /* Dark gray for readability */
-    line-height: 1.5; /* Comfortable spacing */
+    /* line-height: 1;  */
     text-align: center;
 }
 
@@ -128,7 +130,13 @@
 
     #paragraph_for_section {
         font-size: 1rem; /* Reduce paragraph size for readability */
-        
+    }
+    .timeline-card .heading {
+        font-size: 1rem; /* Reduced size for small screens */
+    }
+
+    .timeline-card .description {
+        font-size: 0.8rem; /* Smaller text for compact screens */
     }
 }
 
@@ -141,6 +149,13 @@
     #paragraph_for_section {
         font-size: 1.1rem; /* Slightly smaller than base */
     }
+    .timeline-card .heading {
+        font-size: 1.1rem; /* Slightly larger for tablets */
+    }
+
+    .timeline-card .description {
+        font-size: 0.85rem; /* Slightly larger for better readability */
+    }
 }
 
 /* Large screens (desktops, 769px to 992px) */
@@ -152,6 +167,13 @@
     #paragraph_for_section {
         font-size: 1.15rem; /* Slightly smaller than base */
     }
+    .timeline-card .heading {
+        font-size: 1.2rem; /* Match base size */
+    }
+
+    .timeline-card .description {
+        font-size: 0.9rem; /* Match base size */
+    }
 }
 
 /* Extra large screens (large desktops, 993px and above) */
@@ -162,5 +184,16 @@
 
     #paragraph_for_section {
         font-size: 1.2rem; /* Keep the base size */
+    }
+    .timeline-card{
+        width: 200px;
+        height: 200px;
+    }
+    .timeline-card .heading {
+        font-size: 1.3rem; /* Slightly larger for emphasis on larger screens */
+    }
+
+    .timeline-card .description {
+        font-size: 1rem; /* Slightly larger for better readability */
     }
 }
